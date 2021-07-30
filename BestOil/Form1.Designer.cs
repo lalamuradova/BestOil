@@ -64,7 +64,7 @@ namespace BestOil
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.TotalPriceLbl = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.CalculateBtn = new System.Windows.Forms.Button();
@@ -117,7 +117,6 @@ namespace BestOil
             this.PayLbl.Name = "PayLbl";
             this.PayLbl.Size = new System.Drawing.Size(119, 70);
             this.PayLbl.TabIndex = 11;
-            this.PayLbl.Text = "kbhuydsogiuo";
             this.PayLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
@@ -162,19 +161,23 @@ namespace BestOil
             // 
             // MoneyTxtBox
             // 
+            this.MoneyTxtBox.Enabled = false;
             this.MoneyTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MoneyTxtBox.Location = new System.Drawing.Point(183, 215);
             this.MoneyTxtBox.Name = "MoneyTxtBox";
             this.MoneyTxtBox.Size = new System.Drawing.Size(113, 32);
             this.MoneyTxtBox.TabIndex = 7;
+            this.MoneyTxtBox.TextChanged += new System.EventHandler(this.MoneyTxtBox_TextChanged);
             // 
             // LiterTxtBox
             // 
+            this.LiterTxtBox.Enabled = false;
             this.LiterTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LiterTxtBox.Location = new System.Drawing.Point(183, 174);
             this.LiterTxtBox.Name = "LiterTxtBox";
             this.LiterTxtBox.Size = new System.Drawing.Size(113, 32);
             this.LiterTxtBox.TabIndex = 6;
+            this.LiterTxtBox.TextChanged += new System.EventHandler(this.LiterTxtBox_TextChanged);
             // 
             // groupBox2
             // 
@@ -182,7 +185,7 @@ namespace BestOil
             this.groupBox2.Controls.Add(this.LitrRadiobtn);
             this.groupBox2.Location = new System.Drawing.Point(12, 150);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(165, 97);
+            this.groupBox2.Size = new System.Drawing.Size(165, 109);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             // 
@@ -197,6 +200,7 @@ namespace BestOil
             this.MoneyRadiobtn.TabStop = true;
             this.MoneyRadiobtn.Text = "Money";
             this.MoneyRadiobtn.UseVisualStyleBackColor = true;
+            this.MoneyRadiobtn.CheckedChanged += new System.EventHandler(this.MoneyRadiobtn_CheckedChanged);
             // 
             // LitrRadiobtn
             // 
@@ -209,14 +213,17 @@ namespace BestOil
             this.LitrRadiobtn.TabStop = true;
             this.LitrRadiobtn.Text = "Quantity";
             this.LitrRadiobtn.UseVisualStyleBackColor = true;
+            this.LitrRadiobtn.CheckedChanged += new System.EventHandler(this.LitrRadiobtn_CheckedChanged);
             // 
             // priceTxtbox
             // 
+            this.priceTxtbox.Enabled = false;
             this.priceTxtbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceTxtbox.Location = new System.Drawing.Point(120, 88);
             this.priceTxtbox.Name = "priceTxtbox";
             this.priceTxtbox.Size = new System.Drawing.Size(176, 32);
             this.priceTxtbox.TabIndex = 3;
+            this.priceTxtbox.TextChanged += new System.EventHandler(this.MoneyTxtBox_TextChanged);
             // 
             // gasolineCombobox
             // 
@@ -225,12 +232,12 @@ namespace BestOil
             this.gasolineCombobox.Items.AddRange(new object[] {
             "92",
             "95",
-            "98",
             "Premium"});
             this.gasolineCombobox.Location = new System.Drawing.Point(120, 44);
             this.gasolineCombobox.Name = "gasolineCombobox";
             this.gasolineCombobox.Size = new System.Drawing.Size(176, 34);
             this.gasolineCombobox.TabIndex = 2;
+            this.gasolineCombobox.SelectedIndexChanged += new System.EventHandler(this.gasolineCombobox_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -294,9 +301,8 @@ namespace BestOil
             this.PayCafelbl.Font = new System.Drawing.Font("Centaur", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PayCafelbl.Location = new System.Drawing.Point(25, 54);
             this.PayCafelbl.Name = "PayCafelbl";
-            this.PayCafelbl.Size = new System.Drawing.Size(119, 70);
+            this.PayCafelbl.Size = new System.Drawing.Size(203, 70);
             this.PayCafelbl.TabIndex = 11;
-            this.PayCafelbl.Text = "kbhuydsogiuo";
             this.PayCafelbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label10
@@ -331,35 +337,43 @@ namespace BestOil
             // 
             // ColaCountTxtBox
             // 
+            this.ColaCountTxtBox.Enabled = false;
             this.ColaCountTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ColaCountTxtBox.Location = new System.Drawing.Point(252, 216);
             this.ColaCountTxtBox.Name = "ColaCountTxtBox";
             this.ColaCountTxtBox.Size = new System.Drawing.Size(58, 32);
             this.ColaCountTxtBox.TabIndex = 17;
+            this.ColaCountTxtBox.TextChanged += new System.EventHandler(this.ColaCountTxtBox_TextChanged);
             // 
             // FreeCountTxtBox
             // 
+            this.FreeCountTxtBox.Enabled = false;
             this.FreeCountTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FreeCountTxtBox.Location = new System.Drawing.Point(252, 165);
             this.FreeCountTxtBox.Name = "FreeCountTxtBox";
             this.FreeCountTxtBox.Size = new System.Drawing.Size(58, 32);
             this.FreeCountTxtBox.TabIndex = 18;
+            this.FreeCountTxtBox.TextChanged += new System.EventHandler(this.FreeCountTxtBox_TextChanged);
             // 
             // HamburgercountTxtBox
             // 
+            this.HamburgercountTxtBox.Enabled = false;
             this.HamburgercountTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HamburgercountTxtBox.Location = new System.Drawing.Point(252, 114);
             this.HamburgercountTxtBox.Name = "HamburgercountTxtBox";
             this.HamburgercountTxtBox.Size = new System.Drawing.Size(58, 32);
             this.HamburgercountTxtBox.TabIndex = 15;
+            this.HamburgercountTxtBox.TextChanged += new System.EventHandler(this.HamburgercountTxtBox_TextChanged);
             // 
             // HotDogCountTxtBox
             // 
+            this.HotDogCountTxtBox.Enabled = false;
             this.HotDogCountTxtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HotDogCountTxtBox.Location = new System.Drawing.Point(252, 65);
             this.HotDogCountTxtBox.Name = "HotDogCountTxtBox";
             this.HotDogCountTxtBox.Size = new System.Drawing.Size(58, 32);
             this.HotDogCountTxtBox.TabIndex = 16;
+            this.HotDogCountTxtBox.TextChanged += new System.EventHandler(this.HotDogCountTxtBox_TextChanged);
             // 
             // ColaPriceTxtBox
             // 
@@ -369,7 +383,7 @@ namespace BestOil
             this.ColaPriceTxtBox.Name = "ColaPriceTxtBox";
             this.ColaPriceTxtBox.Size = new System.Drawing.Size(48, 32);
             this.ColaPriceTxtBox.TabIndex = 13;
-            this.ColaPriceTxtBox.Text = "1,80";
+            this.ColaPriceTxtBox.Text = "1.80";
             // 
             // FreePriceTxtBox
             // 
@@ -389,7 +403,7 @@ namespace BestOil
             this.HamburgerPriceTxtBox.Name = "HamburgerPriceTxtBox";
             this.HamburgerPriceTxtBox.Size = new System.Drawing.Size(48, 32);
             this.HamburgerPriceTxtBox.TabIndex = 11;
-            this.HamburgerPriceTxtBox.Text = "2,50";
+            this.HamburgerPriceTxtBox.Text = "2.50";
             // 
             // HotdogPriceTxtBox
             // 
@@ -399,7 +413,8 @@ namespace BestOil
             this.HotdogPriceTxtBox.Name = "HotdogPriceTxtBox";
             this.HotdogPriceTxtBox.Size = new System.Drawing.Size(48, 32);
             this.HotdogPriceTxtBox.TabIndex = 12;
-            this.HotdogPriceTxtBox.Text = "1,50";
+            this.HotdogPriceTxtBox.Tag = "";
+            this.HotdogPriceTxtBox.Text = "1.50";
             // 
             // checkBox4
             // 
@@ -411,6 +426,7 @@ namespace BestOil
             this.checkBox4.TabIndex = 3;
             this.checkBox4.Text = "Coca-Cola";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -422,6 +438,7 @@ namespace BestOil
             this.checkBox3.TabIndex = 2;
             this.checkBox3.Text = "Hamburger";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -433,6 +450,7 @@ namespace BestOil
             this.checkBox2.TabIndex = 1;
             this.checkBox2.Text = "Potatoe free";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -444,11 +462,12 @@ namespace BestOil
             this.checkBox1.TabIndex = 0;
             this.checkBox1.Text = "Hot-Dog";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.TotalPriceLbl);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.pictureBox1);
             this.groupBox4.Controls.Add(this.CalculateBtn);
@@ -460,16 +479,15 @@ namespace BestOil
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Total Price";
             // 
-            // label9
+            // TotalPriceLbl
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label9.Font = new System.Drawing.Font("Centaur", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(486, 71);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(119, 70);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "kbhuydsogiuo";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.TotalPriceLbl.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.TotalPriceLbl.Font = new System.Drawing.Font("Centaur", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalPriceLbl.Location = new System.Drawing.Point(472, 60);
+            this.TotalPriceLbl.Name = "TotalPriceLbl";
+            this.TotalPriceLbl.Size = new System.Drawing.Size(178, 93);
+            this.TotalPriceLbl.TabIndex = 13;
+            this.TotalPriceLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label11
             // 
@@ -569,7 +587,7 @@ namespace BestOil
         private System.Windows.Forms.Label PayCafelbl;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label TotalPriceLbl;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button CalculateBtn;
