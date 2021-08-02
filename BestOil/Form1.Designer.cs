@@ -243,7 +243,7 @@ namespace BestOil
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Centaur", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 88);
+            this.label2.Location = new System.Drawing.Point(6, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 27);
             this.label2.TabIndex = 1;
