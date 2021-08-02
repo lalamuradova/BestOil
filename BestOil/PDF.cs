@@ -55,6 +55,7 @@ namespace BestOil
             graph.DrawString("Təşəkkür Edirik", font2, XBrushes.Black, new XRect(0, column, pdfPage.Width.Point, pdfPage.Height.Point), XStringFormats.TopCenter);
 
             pdf.Save(filename);
+
             Process.Start(filename);
         }
     }
